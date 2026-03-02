@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mading Digital – Ruang Ekspresi Siswa</title>
+  <meta name="description" content="Mading Digital sekolah – temukan artikel, karya seni, berita, dan pengumuman terbaru dari siswa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== PROGRESS BAR ===== -->
+  <div id="progress-bar" aria-hidden="true"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">📌</span>
+        <span>Mading<strong>Digital</strong></span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#featured">Unggulan</a></li>
+        <li><a href="#articles">Artikel</a></li>
+        <li><a href="#gallery">Galeri</a></li>
+        <li><a href="#pengumuman">Pengumuman</a></li>
+      </ul>
+      <button class="nav-cta" id="nav-cta">Tulis Artikel</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <!-- Classroom photo as parallax background -->
+    <div class="hero-parallax-bg" id="hero-bg" role="img" aria-label="Foto kelas kami — Dirgahayu RI 80"></div>
+    
+    <!-- Multi-layer overlay for readability + mood -->
+    <div class="hero-overlay"></div>
+    <div class="hero-color-wash"></div>
+
+    <!-- Floating deco cards -->
+    <div class="deco-card deco-1" aria-hidden="true">✦ Pengumuman</div>
+    <div class="deco-card deco-2" aria-hidden="true">🎨 Karya Seni</div>
+    <div class="deco-card deco-3" aria-hidden="true">📰 Berita Sekolah</div>
+    <div class="deco-card deco-4" aria-hidden="true">✍️ Opini</div>
+
+    <!-- Main hero content -->
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">📌 Edisi Maret 2026</div>
+      <h1 class="hero-title">
+        <span class="title-line reveal-up delay-1">Ruang</span>
+        <span class="title-line title-accent reveal-up delay-2">Ekspresi</span>
+        <span class="title-line reveal-up delay-3">Kita</span>
+      </h2>
+      <p class="hero-sub reveal-up delay-4">
+        Temukan cerita, karya dan gagasan terbaik dari warga sekolah.<br/>
+        Diperbaharui setiap minggu — dari kami, untuk kami.
+      </p>
+      <div class="hero-actions reveal-up delay-5">
+        <a href="#featured" class="btn-primary">Baca Sekarang</a>
+        <a href="#articles" class="btn-ghost">Lihat Semua →</a>
+      </div>
+    </div>
+
+    <!-- Photo credit strip -->
+    <div class="hero-photo-credit" aria-hidden="true">📷 Foto kelas kami – Dirgahayu RI 80</div>
+
+    <!-- Scroll hint -->
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+
+    <!-- ═══ WAVE TRANSITION into next section ═══ -->
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" fill="#070b14"/>
+        <path d="M0,70 C360,140 720,20 1080,80 C1260,110 1380,60 1440,80 L1440,120 L0,120 Z" fill="rgba(79,128,255,0.06)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED ===== -->
+  <section id="featured">
+    <div class="section-label reveal-up">✦ Artikel Unggulan</div>
+    <div class="featured-grid">
+
+      <article class="featured-main reveal-up" id="feat-main">
+        <div class="feat-img-wrap">
+          <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=900&auto=format&fit=crop" alt="Siswa membaca buku di perpustakaan" class="feat-img" loading="lazy"/>
+          <div class="feat-img-overlay"></div>
+          <span class="feat-tag">Pendidikan</span>
+        </div>
+        <div class="feat-body">
+          <div class="feat-meta">
+            <span class="feat-author">✍️ Anisa Rahma</span>
+            <span class="feat-date">28 Feb 2026</span>
+          </div>
+          <h2 class="feat-title">Membaca Buku adalah Cara Terbaik Membuka Jendela Dunia</h2>
+          <p class="feat-excerpt">Perpustakaan sekolah kita baru mendapat 300 koleksi buku baru. Temukan mengapa generasi muda perlu kembali jatuh cinta pada buku fisik di era digital ini...</p>
+          <a href="#" class="feat-read-more">Baca Selengkapnya <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <div class="featured-sidebar">
+        <article class="feat-side reveal-right" style="--delay: 0.1s">
+          <div class="feat-side-img-wrap">
+            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&auto=format&fit=crop" alt="Lomba debat" class="feat-side-img" loading="lazy"/>
+            <span class="feat-tag tag-sm">Lomba</span>
+          </div>
+          <div class="feat-side-body">
+            <div class="feat-meta"><span class="feat-date">25 Feb 2026</span></div>
+            <h3>Tim Debat Raih Juara 1 Tingkat Provinsi</h3>
+            <a href="#" class="feat-read-more">Baca →</a>
+          </div>
+        </article>
+
+        <article class="feat-side reveal-right" style="--delay: 0.2s">
+          <div class="feat-side-img-wrap">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&auto=format&fit=crop" alt="Kegiatan sekolah" class="feat-side-img" loading="lazy"/>
+            <span class="feat-tag tag-sm tag-green">Kegiatan</span>
+          </div>
+          <div class="feat-side-body">
+            <div class="feat-meta"><span class="feat-date">22 Feb 2026</span></div>
+            <h3>Pekan Seni Sekolah 2026 Resmi Dibuka dengan Meriah</h3>
+            <a href="#" class="feat-read-more">Baca →</a>
+          </div>
+        </article>
+
+        <article class="feat-side reveal-right" style="--delay: 0.3s">
+          <div class="feat-side-img-wrap">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&auto=format&fit=crop" alt="OSIS meeting" class="feat-side-img" loading="lazy"/>
+            <span class="feat-tag tag-sm tag-purple">OSIS</span>
+          </div>
+          <div class="feat-side-body">
+            <div class="feat-meta"><span class="feat-date">20 Feb 2026</span></div>
+            <h3>OSIS Luncurkan Program Menabung Sampah Digital</h3>
+            <a href="#" class="feat-read-more">Baca →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ARTICLE GRID ===== -->
+  <section id="articles">
+    <div class="section-header reveal-up">
+      <div class="section-label">📌 Semua Artikel</div>
+      <h2 class="section-title">Mading Board</h2>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="filter-bar reveal-up" id="filter-bar">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="pendidikan">Pendidikan</button>
+      <button class="filter-btn" data-filter="seni">Seni & Budaya</button>
+      <button class="filter-btn" data-filter="olahraga">Olahraga</button>
+      <button class="filter-btn" data-filter="teknologi">Teknologi</button>
+      <button class="filter-btn" data-filter="opini">Opini</button>
+    </div>
+
+    <!-- Article Cards Grid -->
+    <div class="articles-grid" id="articles-grid">
+
+      <article class="article-card" data-category="pendidikan" data-index="0">
+        <div class="card-tilt-inner">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=600&auto=format&fit=crop" alt="Belajar online" loading="lazy"/>
+            <span class="card-tag">Pendidikan</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-author">Rizky Pratama</span>
+              <span class="card-date">1 Mar 2026</span>
+            </div>
+            <h3 class="card-title">5 Teknik Belajar Efektif di Era Digital</h3>
+            <p class="card-excerpt">Dengan makin banyaknya distraksi digital, teknik belajar yang tepat semakin penting untuk...</p>
+            <div class="card-footer">
+              <div class="card-likes"><span>❤️</span> 142</div>
+              <a href="#" class="card-read">Baca →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="article-card" data-category="seni" data-index="1">
+        <div class="card-tilt-inner">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&auto=format&fit=crop" alt="Lukisan" loading="lazy"/>
+            <span class="card-tag tag-orange">Seni</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-author">Dewi Sartika</span>
+              <span class="card-date">28 Feb 2026</span>
+            </div>
+            <h3 class="card-title">Ekspresiku: Pameran Lukisan Siswa X-IPS</h3>
+            <p class="card-excerpt">Ruang kelas berubah jadi galeri seni mini ketika siswa kelas X-IPS memajang hasil karya...</p>
+            <div class="card-footer">
+              <div class="card-likes"><span>❤️</span> 89</div>
+              <a href="#" class="card-read">Baca →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="article-card" data-category="olahraga" data-index="2">
+        <div class="card-tilt-inner">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&auto=format&fit=crop" alt="Basket" loading="lazy"/>
+            <span class="card-tag tag-green">Olahraga</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-author">Bagas Santoso</span>
+              <span class="card-date">27 Feb 2026</span>
+            </div>
+            <h3 class="card-title">Tim Basket Putra Lolos Final Kota</h3>
+            <p class="card-excerpt">Perjuangan keras selama dua bulan latihan intensif akhirnya membuahkan hasil. Tim basket...</p>
+            <div class="card-footer">
+              <div class="card-likes"><span>❤️</span> 201</div>
+              <a href="#" class="card-read">Baca →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="article-card" data-category="teknologi" data-index="3">
+        <div class="card-tilt-inner">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&auto=format&fit=crop" alt="Robot" loading="lazy"/>
+            <span class="card-tag tag-purple">Teknologi</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-author">Farhan Maulana</span>
+              <span class="card-date">26 Feb 2026</span>
+            </div>
+            <h3 class="card-title">Ekstrakurikuler Robotika Raih Silver di Kompetisi Nasional</h3>
+            <p class="card-excerpt">Robot "Nusantara-X" buatan siswa kelas XI berhasil mencuri perhatian para juri dengan...</p>
+            <div class="card-footer">
+              <div class="card-likes"><span>❤️</span> 176</div>
+              <a href="#" class="card-read">Baca →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="article-card" data-category="opini" data-index="4">
+        <div class="card-tilt-inner">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&auto=format&fit=crop" alt="Menulis" loading="lazy"/>
+            <span class="card-tag tag-yellow">Opini</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-author">Nadia Putri</span>
+              <span class="card-date">25 Feb 2026</span>
+            </div>
+            <h3 class="card-title">Stop Bullying: Sudah Saatnya Kita Berbicara</h3>
+            <p class="card-excerpt">Perundungan di sekolah bukan sekadar masalah individu, ini adalah krisis kolektif yang...</p>
+            <div class="card-footer">
+              <div class="card-likes"><span>❤️</span> 314</div>
+              <a href="#" class="card-read">Baca →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="article-card" data-category="seni" data-index="5">
+        <div class="card-tilt-inner">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&auto=format&fit=crop" alt="Musik" loading="lazy"/>
+            <span class="card-tag tag-orange">Seni</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="card-author">Ayu Lestari</span>
+              <span class="card-date">24 Feb 2026</span>
+            </div>
+            <h3 class="card-title">Band Sekolah Tampil di Festival Musik Indie Kota</h3>
+            <p class="card-excerpt">Untuk pertama kalinya, band sekolah kita membawakan lagu original ciptaan siswa sendiri di...</p>
+            <div class="card-footer">
+              <div class="card-likes"><span>❤️</span> 98</div>
+              <a href="#" class="card-read">Baca →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <div class="load-more-wrap reveal-up">
+      <button class="btn-ghost load-more" id="load-more">Muat Lebih Banyak</button>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE TICKER ===== -->
+  <div class="ticker-wrap" aria-label="Berita singkat">
+    <div class="ticker-label">🔴 Live</div>
+    <div class="ticker-track">
+      <div class="ticker-inner" id="ticker-inner">
+        <span>Ujian Tengah Semester dimulai 10 Maret 2026</span>
+        <span class="ticker-dot">◆</span>
+        <span>Pendaftaran Lomba Sains Nasional dibuka hingga 15 Maret</span>
+        <span class="ticker-dot">◆</span>
+        <span>Jadwal Ekstrakurikuler sementara diliburkan 5–7 Maret</span>
+        <span class="ticker-dot">◆</span>
+        <span>Selamat kepada Kelas XI-IPA atas kemenangan di O2SN!</span>
+        <span class="ticker-dot">◆</span>
+        <span>Pemilihan ketua OSIS baru akan digelar 20 Maret 2026</span>
+        <span class="ticker-dot">◆</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GALLERY ===== -->
+  <section id="gallery">
+    <div class="section-header reveal-up">
+      <div class="section-label">🎨 Galeri</div>
+      <h2 class="section-title">Momen Terbaik</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item g-tall reveal-up" style="--delay:0s">
+        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=700&auto=format&fit=crop" alt="Wisuda siswa" loading="lazy"/>
+        <div class="gallery-caption">Wisuda Sekolah 2025</div>
+      </div>
+      <div class="gallery-item reveal-up" style="--delay:0.1s">
+        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&auto=format&fit=crop" alt="Presentasi kelas" loading="lazy"/>
+        <div class="gallery-caption">Presentasi Proyek Akhir</div>
+      </div>
+      <div class="gallery-item reveal-up" style="--delay:0.2s">
+        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=700&auto=format&fit=crop" alt="Piknik sekolah" loading="lazy"/>
+        <div class="gallery-caption">Study Tour XII-IPA</div>
+      </div>
+      <div class="gallery-item g-wide reveal-up" style="--delay:0.15s">
+        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&auto=format&fit=crop" alt="Event sekolah" loading="lazy"/>
+        <div class="gallery-caption">Pekan Kreativitas 2026</div>
+      </div>
+      <div class="gallery-item reveal-up" style="--delay:0.25s">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&auto=format&fit=crop" alt="Olahraga" loading="lazy"/>
+        <div class="gallery-caption">Kompetisi Futsal Antar Kelas</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PENGUMUMAN ===== -->
+  <section id="pengumuman">
+    <div class="section-header reveal-up">
+      <div class="section-label">📣 Pengumuman</div>
+      <h2 class="section-title">Info Penting</h2>
+    </div>
+    <div class="announce-list">
+
+      <div class="announce-item reveal-left" style="--delay:0s">
+        <div class="announce-icon" style="--ic:#f59e0b">📅</div>
+        <div class="announce-body">
+          <span class="announce-date">10 – 20 Mar 2026</span>
+          <h3 class="announce-title">Ujian Tengah Semester Genap 2025/2026</h3>
+          <p>Seluruh siswa diharapkan hadir 15 menit sebelum ujian dimulai. Bawa kartu ujian.</p>
+        </div>
+        <span class="announce-badge" style="--bc:#f59e0b">Ujian</span>
+      </div>
+
+      <div class="announce-item reveal-left" style="--delay:0.1s">
+        <div class="announce-icon" style="--ic:#10b981">🏆</div>
+        <div class="announce-body">
+          <span class="announce-date">15 Mar 2026</span>
+          <h3 class="announce-title">Pendaftaran Lomba OSN Tingkat Sekolah</h3>
+          <p>Daftarkan dirimu ke guru mata pelajaran masing-masing. Kuota terbatas, first come first served.</p>
+        </div>
+        <span class="announce-badge" style="--bc:#10b981">Lomba</span>
+      </div>
+
+      <div class="announce-item reveal-left" style="--delay:0.2s">
+        <div class="announce-icon" style="--ic:#6366f1">🎭</div>
+        <div class="announce-body">
+          <span class="announce-date">28 Mar 2026</span>
+          <h3 class="announce-title">Pentas Seni Akhir Tahun – "Nusantara Berseri"</h3>
+          <p>Pendaftaran penampil dibuka. Hubungi seksi seni OSIS. Tiket penonton tersedia gratis.</p>
+        </div>
+        <span class="announce-badge" style="--bc:#6366f1">Acara</span>
+      </div>
+
+      <div class="announce-item reveal-left" style="--delay:0.3s">
+        <div class="announce-icon" style="--ic:#ef4444">⚠️</div>
+        <div class="announce-body">
+          <span class="announce-date">5 – 7 Mar 2026</span>
+          <h3 class="announce-title">Ekstrakurikuler Diliburkan Sementara</h3>
+          <p>Sehubungan dengan persiapan UTS, semua kegiatan ekstrakurikuler diliburkan pada tanggal tersebut.</p>
+        </div>
+        <span class="announce-badge" style="--bc:#ef4444">Penting</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== STATS STRIP ===== -->
+  <div class="stats-strip">
+    <div class="stat-item reveal-up" style="--delay:0s">
+      <span class="stat-num" data-target="342">0</span>
+      <span class="stat-label">Artikel Diterbitkan</span>
+    </div>
+    <div class="stat-sep" aria-hidden="true">◆</div>
+    <div class="stat-item reveal-up" style="--delay:0.1s">
+      <span class="stat-num" data-target="87">0</span>
+      <span class="stat-label">Penulis Aktif</span>
+    </div>
+    <div class="stat-sep" aria-hidden="true">◆</div>
+    <div class="stat-item reveal-up" style="--delay:0.2s">
+      <span class="stat-num" data-target="15200">0</span>
+      <span class="stat-label">Total Pembaca</span>
+    </div>
+    <div class="stat-sep" aria-hidden="true">◆</div>
+    <div class="stat-item reveal-up" style="--delay:0.3s">
+      <span class="stat-num" data-target="24">0</span>
+      <span class="stat-label">Kategori</span>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">📌</span>
+        <span>Mading<strong>Digital</strong></span>
+        <p>Platform ekspresi digital untuk warga sekolah. Tulis, bagikan, inspirasi.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="#featured">Unggulan</a></li>
+          <li><a href="#articles">Artikel</a></li>
+          <li><a href="#gallery">Galeri</a></li>
+          <li><a href="#pengumuman">Pengumuman</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Kategori</h4>
+        <ul>
+          <li><a href="#">Pendidikan</a></li>
+          <li><a href="#">Seni & Budaya</a></li>
+          <li><a href="#">Olahraga</a></li>
+          <li><a href="#">Teknologi</a></li>
+          <li><a href="#">Opini</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Kontak Redaksi</h4>
+        <p>madingdigital@sekolah.sch.id</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+          <a href="#" class="social-btn" aria-label="YouTube">YT</a>
+          <a href="#" class="social-btn" aria-label="Twitter">X</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Mading Digital Sekolah. Dibuat dengan ❤️ oleh Tim Redaksi.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
