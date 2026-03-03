@@ -45,12 +45,14 @@ Seluruh sistem berjalan di sisi client (frontend) tanpa framework dan tanpa back
 
 ## 📁 Struktur Folder
 Berikut struktur dasar proyek:
-MadingDigital/
-│
-├── index.html # Halaman utama website
-├── style.css # File styling dan desain tampilan
-├── script.js # File JavaScript untuk interaksi & animasi
-└── img/ # Folder gambar 
+```
+.
+├── index.html
+├── style.css
+├── script.js
+├── /images
+│   └── (gambar produk)
+```
 
 Struktur dibuat sederhana agar mudah dipahami dan dikembangkan lebih lanjut.
 
