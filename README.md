@@ -1,4 +1,4 @@
-# Mading Digital 📰✨
+# Mading Digital Kelas📰✨
 **Mading Digital** adalah aplikasi web berbasis frontend yang berfungsi sebagai papan majalah dinding (mading) digital. Website ini dirancang untuk menampilkan artikel, pengumuman, dan galeri kegiatan sekolah dalam tampilan modern, bersih, dan responsif.
 
 🌐 **Live Demo:**  
