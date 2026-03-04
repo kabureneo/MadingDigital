@@ -1274,3 +1274,383 @@ section {
   .modal-box { border-radius: var(--radius-lg) var(--radius-lg) 0 0; max-height: 95vh; }
 }
 
+
+/* ══════════════════════════════════════
+   EDITORIAL / PENGANTAR — PREMIUM
+══════════════════════════════════════ */
+#editorial {
+  max-width: 1280px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* — Connector line from hero — */
+#editorial::before {
+  content: '';
+  position: absolute;
+  top: -40px; left: 50%; transform: translateX(-50%);
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--clr-border));
+}
+
+/* — Ambient glow blobs — */
+.ed-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.ed-blob-1 {
+  width: 380px; height: 380px;
+  top: -80px; left: -100px;
+  background: radial-gradient(circle, rgba(79,128,255,0.12), transparent 70%);
+  animation: blobPulse 8s ease-in-out infinite alternate;
+}
+.ed-blob-2 {
+  width: 320px; height: 320px;
+  bottom: -60px; right: -80px;
+  background: radial-gradient(circle, rgba(255,193,7,0.09), transparent 70%);
+  animation: blobPulse 10s ease-in-out infinite alternate-reverse;
+}
+@keyframes blobPulse {
+  0%   { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.15) translate(20px, -15px); }
+}
+
+/* — Dot pattern overlay — */
+.ed-dots {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+/* — Header — */
+.editorial-header {
+  margin-bottom: 2.8rem;
+  position: relative;
+  z-index: 1;
+}
+.editorial-sub {
+  font-size: 0.95rem;
+  color: var(--clr-muted);
+  margin-top: 0.6rem;
+  max-width: 500px;
+  line-height: 1.65;
+}
+.title-glow {
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* — Grid — */
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* — Cards — */
+.editorial-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.8rem 1.6rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s, border-color 0.4s;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Radial glow inside card */
+.editorial-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 0%, rgba(79,128,255,0.08), transparent 65%);
+  pointer-events: none;
+}
+.editorial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 0 40px rgba(79,128,255,0.12);
+  border-color: rgba(79,128,255,0.3);
+}
+
+/* Accent top stripe */
+.ed-sambutan { border-top: 2px solid var(--clr-primary); }
+.ed-sambutan::after { background: radial-gradient(ellipse at 20% 0%, rgba(79,128,255,0.1), transparent 65%); }
+
+.ed-tema     { border-top: 2px solid var(--clr-gold); }
+.ed-tema::after { background: radial-gradient(ellipse at 20% 0%, rgba(255,193,7,0.09), transparent 65%); }
+.ed-tema:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 0 40px rgba(255,193,7,0.1); border-color: rgba(255,193,7,0.3); }
+
+.ed-tujuan   { border-top: 2px solid var(--clr-accent); }
+.ed-tujuan::after { background: radial-gradient(ellipse at 20% 0%, rgba(255,107,107,0.09), transparent 65%); }
+.ed-tujuan:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 0 40px rgba(255,107,107,0.1); border-color: rgba(255,107,107,0.3); }
+
+/* — Step number (watermark) — */
+.ed-step-num {
+  position: absolute;
+  top: 0.5rem; right: 1rem;
+  font-size: 5rem;
+  font-weight: 900;
+  font-family: var(--font-alt);
+  line-height: 1;
+  color: rgba(255,255,255,0.03);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.04em;
+}
+
+/* — Icon wrap with glow ring — */
+.ed-icon-wrap {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.3s;
+}
+.editorial-card:hover .ed-icon-wrap {
+  box-shadow: 0 0 20px rgba(79,128,255,0.25);
+}
+.ed-tema .ed-icon-wrap { transition: box-shadow 0.3s; }
+.ed-tema:hover .ed-icon-wrap { box-shadow: 0 0 20px rgba(255,193,7,0.2); }
+.ed-tujuan:hover .ed-icon-wrap { box-shadow: 0 0 20px rgba(255,107,107,0.2); }
+
+.ed-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  display: block;
+}
+
+/* — Card title — */
+.ed-card-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+  color: var(--clr-text);
+  position: relative;
+  z-index: 1;
+}
+
+/* — Card text — */
+.ed-card-text {
+  font-size: 0.88rem;
+  color: var(--clr-muted);
+  line-height: 1.75;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+/* — Signature (sambutan card) — */
+.ed-signature {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+.ed-sig-line {
+  flex: 1;
+  height: 1px;
+  background: var(--clr-border);
+}
+.ed-sig-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--clr-primary);
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+
+/* — Badge tema — */
+.ed-tema-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 1rem;
+  background: linear-gradient(135deg, rgba(255,193,7,0.15), rgba(255,107,107,0.08));
+  border: 1px solid rgba(255,193,7,0.35);
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--clr-gold);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* — Tema pills — */
+.ed-tema-pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+.ed-pill {
+  padding: 0.25rem 0.75rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--clr-muted);
+  letter-spacing: 0.04em;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.ed-tema:hover .ed-pill {
+  background: rgba(255,193,7,0.08);
+  border-color: rgba(255,193,7,0.25);
+  color: var(--clr-gold);
+}
+
+/* — Tujuan list — */
+.ed-tujuan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.2rem;
+  position: relative;
+  z-index: 1;
+}
+.ed-tujuan-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.87rem;
+  color: var(--clr-muted);
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+}
+.ed-tujuan-list li:hover {
+  background: rgba(255,107,107,0.06);
+  border-color: rgba(255,107,107,0.2);
+  transform: translateX(4px);
+}
+.ed-list-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.04);
+  border-radius: 8px;
+}
+
+/* — Shimmer sweep — */
+.ed-shimmer {
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255,255,255,0.04) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+  transition: left 0.6s ease;
+}
+.editorial-card:hover .ed-shimmer {
+  left: 140%;
+}
+
+/* — Quote strip — */
+.ed-quote-strip {
+  margin-top: 2.5rem;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(79,128,255,0.07), rgba(255,193,7,0.05));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem 2.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+.ed-quote-strip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(79,128,255,0.08), transparent 60%);
+  pointer-events: none;
+}
+.ed-quote-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+.ed-quote-mark {
+  font-family: Georgia, serif;
+  font-size: 4rem;
+  line-height: 0.8;
+  color: var(--clr-primary);
+  opacity: 0.35;
+  user-select: none;
+  flex-shrink: 0;
+}
+.ed-quote-mark-r {
+  transform: rotate(180deg);
+  display: inline-block;
+  color: var(--clr-gold);
+}
+.ed-quote-text {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 500;
+  color: var(--clr-text);
+  font-style: italic;
+  line-height: 1.7;
+  max-width: 600px;
+}
+.ed-quote-deco {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: var(--clr-primary);
+  opacity: 0.4;
+  position: relative;
+  z-index: 1;
+}
+
+/* — Responsive — */
+@media (max-width: 900px) {
+  .editorial-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .editorial-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .editorial-card { padding: 1.5rem 1.3rem; }
+  .ed-quote-strip { padding: 1.4rem 1.5rem; }
+  .ed-quote-mark { font-size: 2.8rem; }
+  .ed-blob-1, .ed-blob-2 { display: none; }
+}
