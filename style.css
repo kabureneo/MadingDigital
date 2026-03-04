@@ -448,6 +448,7 @@ section {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #fff;
+  max-width: 120px;
 }
 .feat-tag.tag-sm { font-size: 0.65rem; top: 0.7rem; left: 0.7rem; }
 .tag-green { background: var(--clr-green); color: #000; }

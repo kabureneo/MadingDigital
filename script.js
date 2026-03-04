@@ -420,6 +420,19 @@ document.querySelectorAll(".gallery-item").forEach(item => {
 /* ─── ARTICLE MODAL ──────────────────────────────────────────── */
 const ARTICLES_DATA = [
   {
+    title: "Kebersamaan kelas XIF2 dalam kegiatan Ramadhan yang diselenggarakan oleh sekolah",
+    author: "M. Hijratul Lucky",
+    date: "4 Maret 2026",
+    category: "Kebersamaan",
+    img: "img/techno-ramandhan.jpeg",
+    content: `<p>Suasana penuh kehangatan dan kebersamaan mewarnai kegiatan Ramadhan yang diselenggarakan oleh sekolah pada bulan suci tahun ini. Seluruh siswa mengikuti rangkaian acara dengan penuh antusias, termasuk kelas XI F2 yang menunjukkan kekompakan dan semangat kebersamaan sepanjang kegiatan berlangsung.</p>
+    <p>Kegiatan Ramadhan ini diisi dengan berbagai agenda seperti tadarus Al-Qur’an, tausiyah, doa bersama, serta kegiatan berbagi takjil. Setiap siswa berperan aktif dalam menyukseskan acara, mulai dari mempersiapkan perlengkapan hingga mengikuti setiap rangkaian kegiatan dengan tertib dan khidmat.</p>
+    <p>Kebersamaan kelas XI F2 terlihat jelas saat mereka saling membantu dan mendukung satu sama lain. Tidak hanya mengikuti kegiatan secara formal, mereka juga memanfaatkan momen tersebut untuk mempererat silaturahmi dan membangun kekompakan sebagai satu keluarga kelas.</p>
+    <p>Salah satu momen yang paling berkesan adalah saat kegiatan berbagi takjil kepada masyarakat sekitar. Dengan penuh semangat, para siswa turun langsung membagikan makanan berbuka puasa sebagai bentuk kepedulian dan rasa syukur di bulan Ramadhan.</p>
+    <p>Kegiatan ini tidak hanya memberikan pengalaman spiritual, tetapi juga menanamkan nilai kebersamaan, empati, dan tanggung jawab sosial kepada seluruh siswa. Kelas XI F2 membuktikan bahwa Ramadhan bukan hanya tentang ibadah pribadi, tetapi juga tentang memperkuat hubungan dan berbagi kebaikan dengan sesama.</p>
+    <p>Melalui kegiatan ini, diharapkan semangat kebersamaan yang telah terjalin dapat terus terjaga, tidak hanya selama bulan Ramadhan, tetapi juga dalam aktivitas belajar dan kehidupan sehari-hari di sekolah.</p>`
+  },
+  {
     title: "Perwakilan kelas XIF2 memenangkan lomba Ranking 1 yang diadakan oleh genza",
     author: "Dominicus Excel",
     date: "1 Maret 2026",
