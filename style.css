@@ -243,7 +243,9 @@ ul { list-style: none; }
 .deco-2 { top: 30%; right: 10%; animation-delay: 0.8s; }
 .deco-3 { bottom: 30%; left: 5%; animation-delay: 1.5s; }
 .deco-4 { bottom: 22%; right: 8%; animation-delay: 0.4s; }
-.deco-5 { top: 50%; left: 20%; transform: translate(-50%, -50%); animation-delay: 0.6s; }
+.deco-5 { top: 40%; left: 15%; transform: translate(-50%, -50%); animation-delay: 0.6s; }
+.deco-6 { top: 60%; right: 18%; transform: translate(-50%, -50%); animation-delay: 0.6s; }
+
 
 @keyframes floatCard {
   0%, 100% { transform: translateY(0px) rotate(-1deg); }

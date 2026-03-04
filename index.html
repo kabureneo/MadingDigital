@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mading Digital – Ruang Ekspresi Siswa</title>
+  <title>Mading Digital – Ruang Ekspresi Kelas</title>
   <meta name="description" content="Mading Digital sekolah – temukan artikel, karya seni, berita, dan pengumuman terbaru dari siswa." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,7 @@
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
         <span class="logo-icon">📌</span>
-        <span>Mading<strong>Digital</strong></span>
+        <span>Mading<strong>Digital</strong> XI-F2</span>
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#featured">Unggulan</a></li>
@@ -38,7 +38,7 @@
   <!-- ===== HERO ===== -->
   <section id="hero">
     <!-- Classroom photo as parallax background -->
-    <div class="hero-parallax-bg" id="hero-bg" role="img" aria-label="Foto kelas kami — Dirgahayu RI 80"></div>
+    <div class="hero-parallax-bg" id="hero-bg" role="img" aria-label="Foto kelas kami — XI F2"></div>
     
     <!-- Multi-layer overlay for readability + mood -->
     <div class="hero-overlay"></div>
@@ -49,6 +49,8 @@
     <div class="deco-card deco-2" aria-hidden="true">🎨 Karya Seni</div>
     <div class="deco-card deco-3" aria-hidden="true">📰 Berita Sekolah</div>
     <div class="deco-card deco-4" aria-hidden="true">✍️ Opini</div>
+    <div class="deco-card deco-5" aria-hidden="true">✨ Kebersamaan</div>
+    <div class="deco-card deco-6" aria-hidden="true">💡 Motivasi</div>
 
     <!-- Main hero content -->
     <div class="hero-content">
@@ -69,7 +71,10 @@
     </div>
 
     <!-- Photo credit strip -->
-    <div class="hero-photo-credit" aria-hidden="true">📷 Foto kelas kami – Dirgahayu RI 80</div>
+    <div class="hero-photo-credit" aria-hidden="true">
+      <p>📷 Foto kelas kami – XI F2</p>
+      <p>05 Maret 2026</p>
+    </div>
 
     <!-- Scroll hint -->
     <div class="hero-scroll-hint" aria-hidden="true">
@@ -93,7 +98,7 @@
 
       <article class="featured-main reveal-up" id="feat-main">
         <div class="feat-img-wrap">
-          <img src="img/foto juara 1.jpeg 1.jpeg" alt="Siswa membaca buku di perpustakaan" class="feat-img" loading="lazy"/>
+          <img src="img/foto juara 1.jpeg" alt="Siswa membaca buku di perpustakaan" class="feat-img" loading="lazy"/>
           <div class="feat-img-overlay"></div>
           <span class="feat-tag">Pendidikan</span>
         </div>
@@ -158,11 +163,11 @@
     <!-- Category Filter -->
     <div class="filter-bar reveal-up" id="filter-bar">
       <button class="filter-btn active" data-filter="all">Semua</button>
-      <button class="filter-btn" data-filter="pendidikan">Pendidikan</button>
-      <button class="filter-btn" data-filter="seni">Seni & Budaya</button>
-      <button class="filter-btn" data-filter="olahraga">Olahraga</button>
-      <button class="filter-btn" data-filter="teknologi">Teknologi</button>
-      <button class="filter-btn" data-filter="opini">Opini</button>
+      <button class="filter-btn" data-filter="Kebersamaan" id="kebersamaan">Kebersamaan</button>
+      <button class="filter-btn" data-filter="pendidikan" id="pendidikan">Pendidikan</button>
+      <button class="filter-btn" data-filter="seni" id="seni">Seni & Budaya</button>
+      <button class="filter-btn" data-filter="teknologi" id="teknologi">Teknologi</button>
+      <button class="filter-btn" data-filter="opini" id="opini">Opini</button>
     </div>
 
     <!-- Article Cards Grid -->
@@ -212,7 +217,7 @@
         </div>
       </article>
 
-      <article class="article-card" data-category="olahraga" data-index="2">
+      <article class="article-card" data-category="Kebersamaan" data-index="2">
         <div class="card-tilt-inner">
           <div class="card-img-wrap">
             <img src="img/mading 1.jpeg" alt="Basket" loading="lazy"/>
@@ -233,7 +238,7 @@
         </div>
       </article>
 
-      <article class="article-card" data-category="teknologi" data-index="3">
+      <article class="article-card" data-category="Kebersamaan" data-index="3">
         <div class="card-tilt-inner">
           <div class="card-img-wrap">
             <img src="img/mading 2.jpeg" alt="Robot" loading="lazy"/>
@@ -279,7 +284,7 @@
         <div class="card-tilt-inner">
           <div class="card-img-wrap">
             <img src="img/mading 4.jpeg" alt="Musik" loading="lazy"/>
-            <span class="card-tag tag-orange">Seni</span>
+            <span class="card-tag tag-orange">Kebersamaan</span>
           </div>
           <div class="card-body">
             <div class="card-meta">
@@ -307,16 +312,15 @@
     <div class="ticker-label">🔴 Live</div>
     <div class="ticker-track">
       <div class="ticker-inner" id="ticker-inner">
-        <span>Ujian Tengah Semester dimulai 10 Maret 2026</span>
+        <span></span>
         <span class="ticker-dot">◆</span>
-        <span>Pendaftaran Lomba Sains Nasional dibuka hingga 15 Maret</span>
+        <span>Pendaftaran Lomba Sains Nasional dibuka hingga 7 Maret</span>
         <span class="ticker-dot">◆</span>
-        <span>Jadwal Ekstrakurikuler sementara diliburkan 5–7 Maret</span>
+        <span>Jadwal Sekolah akan diliburkan pada tanggal 16-24 Maret</span>
         <span class="ticker-dot">◆</span>
-        <span>Selamat kepada Kelas XI-IPA atas kemenangan di O2SN!</span>
+        <span>Selamat Menunaikan ibadah puasa</span>
         <span class="ticker-dot">◆</span>
-        <span>Pemilihan ketua OSIS baru akan digelar 20 Maret 2026</span>
-        <span class="ticker-dot">◆</span>
+        <span>XI-F2</span>
       </div>
     </div>
   </div>
@@ -388,6 +392,26 @@
     </div>
     <div class="announce-list">
 
+      <div class="announce-item reveal-left" style="--delay:0.2s">
+        <div class="announce-icon" style="--ic:#6366f1">🕌</div>
+        <div class="announce-body">
+          <span class="announce-date">04 Mar 2026</span>
+          <h3 class="announce-title">Kegiatan Gebyar Ramadhan</h3>
+          <p></p>
+        </div>
+        <span class="announce-badge" style="--bc:#6366f1">Acara</span>
+      </div>
+
+      <div class="announce-item reveal-left" style="--delay:0.1s">
+        <div class="announce-icon" style="--ic:#10b981">🏆</div>
+        <div class="announce-body">
+          <span class="announce-date">7 Mar 2026</span>
+          <h3 class="announce-title">Pendaftaran Lomba OPSI & dan FIKSI</h3>
+          <p>Daftarkan dirimu ke guru mata pelajaran masing-masing. Kuota terbatas, first come first served.</p>
+        </div>
+        <span class="announce-badge" style="--bc:#10b981">Lomba</span>
+      </div>
+
       <div class="announce-item reveal-left" style="--delay:0s">
         <div class="announce-icon" style="--ic:#f59e0b">📅</div>
         <div class="announce-body">
@@ -396,26 +420,6 @@
           <p>Seluruh siswa diharapkan hadir 15 menit sebelum ujian dimulai. Bawa kartu ujian.</p>
         </div>
         <span class="announce-badge" style="--bc:#f59e0b">Ujian</span>
-      </div>
-
-      <div class="announce-item reveal-left" style="--delay:0.1s">
-        <div class="announce-icon" style="--ic:#10b981">🏆</div>
-        <div class="announce-body">
-          <span class="announce-date">15 Mar 2026</span>
-          <h3 class="announce-title">Pendaftaran Lomba OSN Tingkat Sekolah</h3>
-          <p>Daftarkan dirimu ke guru mata pelajaran masing-masing. Kuota terbatas, first come first served.</p>
-        </div>
-        <span class="announce-badge" style="--bc:#10b981">Lomba</span>
-      </div>
-
-      <div class="announce-item reveal-left" style="--delay:0.2s">
-        <div class="announce-icon" style="--ic:#6366f1">🎭</div>
-        <div class="announce-body">
-          <span class="announce-date">28 Mar 2026</span>
-          <h3 class="announce-title">Pentas Seni Akhir Tahun – "Nusantara Berseri"</h3>
-          <p>Pendaftaran penampil dibuka. Hubungi seksi seni OSIS. Tiket penonton tersedia gratis.</p>
-        </div>
-        <span class="announce-badge" style="--bc:#6366f1">Acara</span>
       </div>
 
       <div class="announce-item reveal-left" style="--delay:0.3s">
@@ -434,22 +438,22 @@
   <!-- ===== STATS STRIP ===== -->
   <div class="stats-strip">
     <div class="stat-item reveal-up" style="--delay:0s">
-      <span class="stat-num" data-target="342">0</span>
+      <span class="stat-num" data-target="13">0</span>
       <span class="stat-label">Artikel Diterbitkan</span>
     </div>
     <div class="stat-sep" aria-hidden="true">◆</div>
     <div class="stat-item reveal-up" style="--delay:0.1s">
-      <span class="stat-num" data-target="87">0</span>
+      <span class="stat-num" data-target="10">0</span>
       <span class="stat-label">Penulis Aktif</span>
     </div>
     <div class="stat-sep" aria-hidden="true">◆</div>
     <div class="stat-item reveal-up" style="--delay:0.2s">
-      <span class="stat-num" data-target="15200">0</span>
+      <span class="stat-num" data-target="367">0</span>
       <span class="stat-label">Total Pembaca</span>
     </div>
     <div class="stat-sep" aria-hidden="true">◆</div>
     <div class="stat-item reveal-up" style="--delay:0.3s">
-      <span class="stat-num" data-target="24">0</span>
+      <span class="stat-num" data-target="5">0</span>
       <span class="stat-label">Kategori</span>
     </div>
   </div>
@@ -474,19 +478,19 @@
       <div class="footer-links">
         <h4>Kategori</h4>
         <ul>
-          <li><a href="#">Pendidikan</a></li>
-          <li><a href="#">Seni & Budaya</a></li>
-          <li><a href="#">Olahraga</a></li>
-          <li><a href="#">Teknologi</a></li>
-          <li><a href="#">Opini</a></li>
+          <li><a href="#kebersamaan">Kebersamaan</a></li>
+          <li><a href="#pendidikan">Pendidikan</a></li>
+          <li><a href="#seni">Seni & Budaya</a></li>
+          <li><a href="#teknologi">Teknologi</a></li>
+          <li><a href="#opini">Opini</a></li>
         </ul>
       </div>
       <div class="footer-contact">
         <h4>Kontak Redaksi</h4>
         <p>muhammadhijratullucky@gmail.com</p>
         <div class="footer-social">
-          <a href="#" class="social-btn" aria-label="Instagram">IG</a>
-          <a href="#" class="social-btn" aria-label="YouTube">YT</a>
+          <a href="https://Instagram.com/Technocrats.smansa/" class="social-btn" aria-label="Instagram">IG</a>
+          <a href="https://youtube.com/@technocrats.smansa?si=Vpma4Nf3Xbqya4UG" class="social-btn" aria-label="YouTube">YT</a>
           <a href="#" class="social-btn" aria-label="Twitter">X</a>
         </div>
       </div>
