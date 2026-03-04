@@ -483,6 +483,12 @@ section {
   align-items: center;
   gap: 0.3rem;
   transition: gap 0.2s;
+  /* Reset button styles when rendered as <button> */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-main);
 }
 .feat-read-more:hover { gap: 0.6rem; }
 .feat-read-more .arrow { transition: transform 0.2s; }
@@ -508,7 +514,7 @@ section {
 }
 .feat-side-img-wrap {
   position: relative;
-  width: 100px;
+  width: 200px;
   flex-shrink: 0;
 }
 .feat-side-img { height: 100%; }
@@ -516,7 +522,7 @@ section {
   padding: 1rem 1rem 1rem 0;
 }
 .feat-side-body h3 {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   line-height: 1.3;
@@ -1276,7 +1282,7 @@ section {
 
 
 /* ══════════════════════════════════════
-   EDITORIAL / PENGANTAR — PREMIUM
+   EDITORIAL / PENGANTAR 
 ══════════════════════════════════════ */
 #editorial {
   max-width: 1280px;

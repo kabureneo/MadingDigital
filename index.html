@@ -187,66 +187,14 @@
   </section>
 
   <!-- ===== FEATURED ===== -->
+  <!-- Konten diisi dinamis oleh script.js dari ARTICLES_DATA[] -->
   <section id="featured">
     <div class="section-label reveal-up">✦ Artikel Unggulan</div>
-    <div class="featured-grid">
-
-      <article class="featured-main reveal-up" id="feat-main">
-        <div class="feat-img-wrap">
-          <img src="img/foto juara 1.jpeg" alt="Siswa membaca buku di perpustakaan" class="feat-img" loading="lazy"/>
-          <div class="feat-img-overlay"></div>
-          <span class="feat-tag">Pendidikan</span>
-        </div>
-        <div class="feat-body">
-          <div class="feat-meta">
-            <span class="feat-author">✍️ Anisa Rahma</span>
-            <span class="feat-date">28 Feb 2026</span>
-          </div>
-          <h2 class="feat-title">Prestasi yang berhasil diraih oleh XI F2</h2>
-          <p class="feat-excerpt">Perpustakaan sekolah kita baru mendapat 300 koleksi buku baru. Temukan mengapa generasi muda perlu kembali jatuh cinta pada buku fisik di era digital ini...</p>
-          <a href="#" class="feat-read-more">Baca Selengkapnya <span class="arrow">→</span></a>
-        </div>
-      </article>
-
-      <div class="featured-sidebar">
-        <article class="feat-side reveal-right" style="--delay: 0.1s">
-          <div class="feat-side-img-wrap">
-            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&auto=format&fit=crop" alt="Lomba debat" class="feat-side-img" loading="lazy"/>
-            <span class="feat-tag tag-sm">Lomba</span>
-          </div>
-          <div class="feat-side-body">
-            <div class="feat-meta"><span class="feat-date">25 Feb 2026</span></div>
-            <h3>Tim Debat Raih Juara 1 Tingkat Provinsi</h3>
-            <a href="#" class="feat-read-more">Baca →</a>
-          </div>
-        </article>
-
-        <article class="feat-side reveal-right" style="--delay: 0.2s">
-          <div class="feat-side-img-wrap">
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&auto=format&fit=crop" alt="Kegiatan sekolah" class="feat-side-img" loading="lazy"/>
-            <span class="feat-tag tag-sm tag-green">Kegiatan</span>
-          </div>
-          <div class="feat-side-body">
-            <div class="feat-meta"><span class="feat-date">22 Feb 2026</span></div>
-            <h3>Pekan Seni Sekolah 2026 Resmi Dibuka dengan Meriah</h3>
-            <a href="#" class="feat-read-more">Baca →</a>
-          </div>
-        </article>
-
-        <article class="feat-side reveal-right" style="--delay: 0.3s">
-          <div class="feat-side-img-wrap">
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&auto=format&fit=crop" alt="OSIS meeting" class="feat-side-img" loading="lazy"/>
-            <span class="feat-tag tag-sm tag-purple">OSIS</span>
-          </div>
-          <div class="feat-side-body">
-            <div class="feat-meta"><span class="feat-date">20 Feb 2026</span></div>
-            <h3>OSIS Luncurkan Program Menabung Sampah Digital</h3>
-            <a href="#" class="feat-read-more">Baca →</a>
-          </div>
-        </article>
-      </div>
+    <div class="featured-grid" id="featured-grid">
+      <!-- Diisi oleh renderFeatured() -->
     </div>
   </section>
+
 
   <!-- ===== ARTICLE GRID ===== -->
   <section id="articles">

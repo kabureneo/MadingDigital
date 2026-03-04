@@ -196,20 +196,89 @@ document.querySelectorAll(".article-card").forEach(card => {
   });
 });
 
-/* ─── FEATURED CARD TILT ─────────────────────────────────────── */
-const featMain = document.getElementById("feat-main");
-if (featMain) {
-  featMain.addEventListener("mousemove", (e) => {
-    const rect = featMain.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top + rect.height / 2;
-    const rx = ((e.clientY - cy) / (rect.height / 2)) * -3;
-    const ry = ((e.clientX - cx) / (rect.width / 2)) * 3;
-    featMain.style.transform = `translateY(-6px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+/* ─── FEATURED — RENDER DINAMIS ─────────────────────────────── */
+/**
+ * Mengisi #featured-grid secara dinamis dari ARTICLES_DATA[].
+ * - Index 0  → artikel utama (featured-main / feat-main)
+ * - Index 1–3 → 3 artikel samping (feat-side)
+ *
+ * Cukup ubah urutan di ARTICLES_DATA untuk mengganti tampilan featured.
+ */
+function renderFeatured() {
+  const grid = document.getElementById("featured-grid");
+  if (!grid || !ARTICLES_DATA.length) return;
+
+  const tagColors = ["", "tag-green", "tag-purple", "tag-orange", "tag-yellow"];
+
+  // ── Main featured (artikel pertama) ──
+  const main = ARTICLES_DATA[0];
+  const mainEl = document.createElement("article");
+  mainEl.className = "featured-main reveal-up";
+  mainEl.id = "feat-main";
+  mainEl.innerHTML = `
+    <div class="feat-img-wrap">
+      <img src="${main.img}" alt="${main.title}" class="feat-img" loading="lazy"/>
+      <div class="feat-img-overlay"></div>
+      <span class="feat-tag">${main.category}</span>
+    </div>
+    <div class="feat-body">
+      <div class="feat-meta">
+        <span class="feat-author">✍️ ${main.author}</span>
+        <span class="feat-date">${main.date}</span>
+      </div>
+      <h2 class="feat-title">${main.title}</h2>
+      <p class="feat-excerpt">${main.content.replace(/<[^>]+>/g, " ").trim().slice(0, 160)}…</p>
+      <button class="feat-read-more feat-open-btn" data-index="0">
+        Baca Selengkapnya <span class="arrow">→</span>
+      </button>
+    </div>`;
+  grid.appendChild(mainEl);
+
+  // Tilt effect pada main featured
+  mainEl.addEventListener("mousemove", (e) => {
+    const rect = mainEl.getBoundingClientRect();
+    const rx = (((e.clientY - rect.top) / rect.height) - 0.5) * -6;
+    const ry = (((e.clientX - rect.left) / rect.width) - 0.5) * 6;
+    mainEl.style.transform = `translateY(-6px) rotateX(${rx}deg) rotateY(${ry}deg)`;
   });
-  featMain.addEventListener("mouseleave", () => {
-    featMain.style.transform = "";
+  mainEl.addEventListener("mouseleave", () => { mainEl.style.transform = ""; });
+
+  // ── Sidebar (artikel ke-2, 3, 4) ──
+  const sidebar = document.createElement("div");
+  sidebar.className = "featured-sidebar";
+
+  const sideCount = Math.min(3, ARTICLES_DATA.length - 1);
+  for (let i = 1; i <= sideCount; i++) {
+    const a = ARTICLES_DATA[i];
+    const delay = (i * 0.1).toFixed(1);
+    const colorClass = tagColors[i % tagColors.length];
+    const sideEl = document.createElement("article");
+    sideEl.className = "feat-side reveal-right";
+    sideEl.style.cssText = `--delay: ${delay}s`;
+    sideEl.innerHTML = `
+      <div class="feat-side-img-wrap">
+        <img src="${a.img}" alt="${a.title}" class="feat-side-img" loading="lazy"/>
+        <span class="feat-tag tag-sm ${colorClass}">${a.category}</span>
+      </div>
+      <div class="feat-side-body">
+        <div class="feat-meta"><span class="feat-date">${a.date}</span></div>
+        <h3>${a.title}</h3>
+        <button class="feat-read-more feat-open-btn" data-index="${i}">Baca →</button>
+      </div>`;
+    sidebar.appendChild(sideEl);
+  }
+  grid.appendChild(sidebar);
+
+  // Wire up modal untuk semua tombol buka di featured
+  grid.querySelectorAll(".feat-open-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openArticleModal(parseInt(btn.dataset.index));
+    });
   });
+
+  // Daftarkan elemen baru ke reveal observer
+  grid.querySelectorAll(".reveal-up, .reveal-right").forEach(el => revealObserver.observe(el));
 }
 
 /* ─── CATEGORY FILTER ────────────────────────────────────────── */
@@ -307,7 +376,7 @@ const ARTICLES_DATA = [
     author: "Dominicus Excel",
     date: "1 Maret 2026",
     category: "Pendidikan",
-    img: "foto juara 1.jpeg",
+    img: "img/foto juara 1.jpeg",
     content: `<p>Dominicus Excel C.H Raih Juara Lomba Ranking 1 Genza Sampit, 30 Januari 2026 - Suasana penuh semangat dan antusiasme mewarnai pelaksanaan Lomba Ranking 1 yang diselenggarakan oleh Genza Sampit pada Jumat, 30 Januari 2026.
 Kegiatan ini diikuti oleh banyak peserta yang siap menguji kemampuan dan pengetahuan mereka dalam berbagai bidang.<p>
 <p>Lomba Ranking 1 merupakan ajang kompetisi yang menantang peserta untuk menjawab berbagai pertanyaan secara cepat dan tepat. Setiap peserta harus mampu bertahan dari setiap babak dengan konsentrasi penuh. Suasana semakin menegangkan ketika jumlah peserta mulai berkurang hingga tersisa beberapa orang terbaik saja.<p>
@@ -322,7 +391,7 @@ Kegiatan ini diikuti oleh banyak peserta yang siap menguji kemampuan dan pengeta
     author: "Dominicus Excel",
     date: "28 Februari 2026",
     category: "Seni Musik",
-    img: "foto juara 3.jpeg",
+    img: "img/foto juara 3.jpeg",
     content: `<p>Perwakilan Kelas XI F2 Raih Juara 2 di Hajatan SMANSA ke-63<p>
 <p>Sampit, 9 Oktober 2025 – Kabar membanggakan datang dari perwakilan kelas XI F2 yang berhasil meraih Juara 2 dalam ajang Hajatan SMANSA ke-63 yang diselenggarakan di SMAN 1 Sampit. Kegiatan tahunan ini merupakan bagian dari perayaan ulang tahun sekolah yang ke-63 dan berlangsung dengan penuh kemeriahan serta antusiasme dari seluruh warga sekolah.<p>
 <p>Tim perwakilan XI F2 yang turut berpartisipasi dalam event tersebut terdiri dari:<p>
@@ -341,7 +410,7 @@ Kegiatan ini diikuti oleh banyak peserta yang siap menguji kemampuan dan pengeta
     author: "Dominicus Excel",
     date: "27 Februari 2026",
     category: "Kebersamaan",
-    img: "mading 1.jpeg",
+    img: "img/mading 1.jpeg",
     content: `<p>Siswa XI F2 Beri Kejutan Spesial untuk Wali Kelas di Hari Guru Nasional<p>
 <p>Dalam rangka memperingati Hari Guru Nasional, siswa kelas XI F2 dari SMAN 1 Sampit mengadakan kejutan sederhana namun penuh makna untuk wali kelas tercinta mereka, Ibu Zulkiyah. Momen tersebut berlangsung dengan suasana haru dan bahagia di dalam kelas.<p>
 <p>Sejak pagi hari, para siswa telah mempersiapkan berbagai kejutan secara diam-diam. Mereka menghias kelas dengan dekorasi sederhana dan menyiapkan kue serta ucapan terima kasih yang ditulis langsung oleh seluruh siswa XI F2. Semua persiapan dilakukan sebagai bentuk apresiasi atas dedikasi dan kesabaran Ibu Zulkiyah dalam membimbing mereka selama ini.<p>
@@ -354,7 +423,7 @@ Kegiatan ini diikuti oleh banyak peserta yang siap menguji kemampuan dan pengeta
     author: "Dominicus Excel",
     date: "26 Februari 2026",
     category: "Kebersamaan",
-    img: "mading 2.jpeg",
+    img: "img/mading 2.jpeg",
     content: `<p>XI F2 Tunjukkan Tanggung Jawab sebagai Petugas Upacara Hari Senin<p>
 <p>Sampit – Siswa kelas XI F2 dari SMAN 1 Sampit mendapatkan kesempatan dan kepercayaan untuk menjadi petugas upacara bendera pada hari Senin. Tugas tersebut dijalankan dengan penuh tanggung jawab, disiplin, dan semangat kebersamaan.<p>
 <p>Sejak beberapa hari sebelumnya, seluruh anggota kelas yang bertugas telah melakukan latihan secara rutin agar pelaksanaan upacara dapat berjalan dengan lancar. Mereka mempersiapkan diri mulai dari pemimpin upacara, pengibar bendera, pembaca teks Pancasila, pembaca UUD 1945, pembaca doa, hingga petugas protokol.<p>
@@ -367,7 +436,7 @@ Kegiatan ini diikuti oleh banyak peserta yang siap menguji kemampuan dan pengeta
     author: "Dominicus Excel",
     date: "25 Februari 2026",
     category: "Opini",
-    img: "mading 5.jpeg",
+    img: "img/mading 5.jpeg",
     content: `<p>Kelas XI F2 Terima Hasil Pembagian Rapor dengan Hasil yang Memuaskan<p>
 <p>Sampit – Kelas XI F2 SMAN 1 Sampit menerima hasil pembagian rapor semester ini dengan perasaan bangga dan penuh rasa syukur. Secara keseluruhan, nilai yang diperoleh siswa-siswi XI F2 menunjukkan hasil yang sangat memuaskan dan mencerminkan kerja keras mereka selama proses pembelajaran.<p>
 <p>Momen pembagian rapor menjadi saat yang dinantikan oleh seluruh siswa. Tidak hanya sebagai bentuk evaluasi hasil belajar, tetapi juga sebagai cerminan usaha, kedisiplinan, serta tanggung jawab dalam mengikuti kegiatan akademik di sekolah. Banyak siswa yang mengalami peningkatan nilai, sementara yang lainnya tetap konsisten mempertahankan prestasi mereka.<p>
@@ -380,7 +449,7 @@ Kegiatan ini diikuti oleh banyak peserta yang siap menguji kemampuan dan pengeta
     author: "Dominicus Excel",
     date: "24 Februari 2026",
     category: "Kebersamaan",
-    img: "mading 4.jpeg",
+    img: "img/mading 4.jpeg",
     content: `<p>Kelas XI F2 Meriahkan Jalan Sehat SMANSA pada Event Hajatan ke-63 dengan Tema Unik<p>
 <p>Sampit – Dalam rangka memeriahkan Hajatan ke-63 yang diselenggarakan oleh SMAN 1 Sampit, kelas XI F2 turut berpartisipasi dalam kegiatan Jalan Sehat SMANSA yang berlangsung dengan penuh semangat dan kreativitas. Mengusung tema bebas kreatif, XI F2 tampil unik dengan konsep “Pemancing dan Ikan”.<p>
 <p>Tema tersebut dipilih melalui diskusi bersama seluruh anggota kelas. Mereka ingin menampilkan sesuatu yang berbeda, menarik, dan tetap menghibur. Dengan kerja sama yang solid, para siswa menyiapkan berbagai properti seperti alat pancing, kostum ikan berwarna-warni, serta atribut pendukung lainnya yang menambah keseruan penampilan mereka.<p>
@@ -448,6 +517,9 @@ window.addEventListener("scroll", onScroll, { passive: true });
 
 /* ─── INIT ──────────────────────────────────────────────────── */
 document.addEventListener("DOMContentLoaded", () => {
+  // Render featured terlebih dahulu dari data
+  renderFeatured();
+
   buildSnapDots();
   updateNavbar();
 
