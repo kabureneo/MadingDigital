@@ -315,7 +315,7 @@ ul { list-style: none; }
 /* Scroll hint */
 .hero-scroll-hint {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -327,7 +327,7 @@ ul { list-style: none; }
   text-transform: uppercase;
   color: var(--clr-muted);
   opacity: 0.7;
-  z-index: 2;
+  z-index: 10;
 }
 .scroll-line {
   width: 1px;
