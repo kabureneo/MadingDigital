@@ -281,29 +281,77 @@ function renderFeatured() {
   grid.querySelectorAll(".reveal-up, .reveal-right").forEach(el => revealObserver.observe(el));
 }
 
-/* ─── CATEGORY FILTER ────────────────────────────────────────── */
+/* ─── CATEGORY FILTER & LOAD MORE ────────────────────────────── */
 const filterBtns = document.querySelectorAll(".filter-btn");
 const articleCards = document.querySelectorAll(".article-card");
+const loadMoreBtn = document.getElementById("load-more");
 
+let currentFilter = "all";
+let visibleLimit = 6;
+const ITEMS_PER_PAGE = 6;
+
+function applyFilterAndPagination() {
+  let matchCount = 0;
+  let visibleCount = 0;
+
+  articleCards.forEach((card, i) => {
+    const match = currentFilter === "all" || card.dataset.category === currentFilter;
+    
+    if (match) {
+      matchCount++;
+      if (visibleCount < visibleLimit) {
+        // Tampilkan kartu
+        card.style.setProperty("--card-delay", visibleCount);
+        card.classList.remove("filtering-out", "hidden");
+        setTimeout(() => card.classList.add("visible"), 20);
+        visibleCount++;
+      } else {
+        // Cocok tapi melebihi limit, sembunyikan
+        card.classList.remove("visible");
+        card.classList.add("filtering-out");
+        setTimeout(() => card.classList.add("hidden"), 350);
+      }
+    } else {
+      // Tidak cocok dengan filter, sembunyikan
+      card.classList.remove("visible");
+      card.classList.add("filtering-out");
+      setTimeout(() => card.classList.add("hidden"), 350);
+    }
+  });
+
+  // Atur visibilitas tombol Load More
+  if (loadMoreBtn) {
+    if (matchCount > visibleLimit) {
+      loadMoreBtn.style.display = "inline-flex";
+    } else {
+      loadMoreBtn.style.display = "none";
+    }
+  }
+}
+
+// Event Listener untuk Filter
 filterBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     filterBtns.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-    const filter = btn.dataset.filter;
-
-    articleCards.forEach((card, i) => {
-      const match = filter === "all" || card.dataset.category === filter;
-      card.style.setProperty("--card-delay", i);
-      if (match) {
-        card.classList.remove("filtering-out", "hidden");
-        setTimeout(() => card.classList.add("visible"), 20);
-      } else {
-        card.classList.add("filtering-out");
-        setTimeout(() => card.classList.add("hidden"), 350);
-      }
-    });
+    
+    currentFilter = btn.dataset.filter;
+    visibleLimit = ITEMS_PER_PAGE; // Reset limit saat pindah kategori
+    
+    applyFilterAndPagination();
   });
 });
+
+// Event Listener untuk Load More
+if (loadMoreBtn) {
+  loadMoreBtn.addEventListener("click", () => {
+    visibleLimit += ITEMS_PER_PAGE;
+    applyFilterAndPagination();
+  });
+}
+
+// Inisialisasi awal
+applyFilterAndPagination();
 
 /* ─── ANIMATED COUNTER ───────────────────────────────────────── */
 function animateCounter(el, target, duration = 1800) {
