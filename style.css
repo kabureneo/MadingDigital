@@ -92,7 +92,10 @@ ul { list-style: none; }
   font-family: var(--font-alt);
   white-space: nowrap;
 }
-.logo-icon { font-size: 1.4rem; }
+.logo-icon { 
+  font-size: 1.4rem; 
+  width: 60px;
+}
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -315,7 +318,7 @@ ul { list-style: none; }
 /* Scroll hint */
 .hero-scroll-hint {
   position: absolute;
-  bottom: 1rem;
+  bottom: -3rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -327,7 +330,7 @@ ul { list-style: none; }
   text-transform: uppercase;
   color: var(--clr-muted);
   opacity: 0.7;
-  z-index: 10;
+  z-index: 1000;
 }
 .scroll-line {
   width: 1px;
