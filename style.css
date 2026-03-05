@@ -170,7 +170,7 @@ ul { list-style: none; }
   position: absolute;
   inset: -2%;
   /* === CLASSROOM PHOTO === */
-  background: url('img/keals-4.jpg') center 30%/cover no-repeat;
+  background: url('img/foto-bersama-ramadhan.jpeg') center 30%/cover no-repeat;
   background-position: 50% 100%;
   will-change: transform;
   /* Ken Burns slow zoom */
