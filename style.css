@@ -933,6 +933,122 @@ section {
   color: var(--clr-muted);
 }
 
+/* ── FOOTER TEAM REDAKSI ── */
+.footer-team-wrap {
+  border-top: 1px solid var(--clr-border);
+  background: rgba(255,255,255,0.01);
+}
+.footer-team-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.footer-team-inner h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--clr-primary);
+  margin-bottom: 0.5rem;
+}
+.footer-team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.f-team-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s;
+  width: 280px;
+}
+.f-team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow);
+  border-color: rgba(79,128,255,0.4);
+}
+.f-team-img-wrap {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+.f-team-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: 10%;
+  object-position: top;
+  transition: transform 0.6s var(--ease-out);
+}
+.f-team-card:hover .f-team-img-wrap img {
+  transform: scale(1.08);
+}
+.f-team-role {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 99px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+.tag-blue { background: var(--clr-primary); }
+/* Tag purple already defined in main CSS, reusing here */
+
+.f-team-body {
+  padding: 1.2rem;
+  text-align: center;
+}
+.f-team-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.01em;
+}
+.f-team-socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.team-social-btn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--clr-border);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--clr-muted);
+  transition: all 0.2s;
+  background: rgba(255,255,255,0.03);
+}
+.team-social-btn:hover {
+  background: var(--clr-primary);
+  border-color: var(--clr-primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 520px) {
+  .footer-team-grid { flex-direction: column; align-items: center; }
+  .f-team-card { width: 100%; max-width: 320px; }
+}
+
 /* ── SCROLL ANIMATION CLASSES ── */
 /* Base hidden states */
 .reveal-up {
